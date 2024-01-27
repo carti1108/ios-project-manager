@@ -4,6 +4,12 @@
     
     static let sectionHeaderElementKind = "section-header-element-kind"
     
+    private lazy var listCollectionView: UICollectionView = {
+        let collectionView: UICollectionView = .init(frame: .zero, collectionViewLayout: createLayout())
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return collectionView
+    }()
         configureUI()
         configureLayout()
 extension TaskListViewController {
