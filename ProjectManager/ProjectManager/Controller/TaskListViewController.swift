@@ -1,6 +1,9 @@
     private enum Section {
         case main
     }
+    
+    static let sectionHeaderElementKind = "section-header-element-kind"
+    
         configureUI()
         configureLayout()
 extension TaskListViewController {
