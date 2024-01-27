@@ -1,3 +1,12 @@
+//
+//  ProjectManager - ViewController.swift
+//  Created by yagom. 
+//  Copyright © yagom. All rights reserved.
+// 
+
+import UIKit
+
+final class HomeViewController: UIViewController {
     private let todoCollectionView: TaskListViewController = .init(taskData: Todo.sampleData)
     private let doingCollectionView: TaskListViewController = .init(taskData: Todo.sampleData)
     private let doneCollectionView: TaskListViewController = .init(taskData: Todo.sampleData)
@@ -43,3 +52,4 @@ extension HomeViewController {
     private func configureNavigation() {
         self.navigationItem.title = "Project Manager"
     }
+}
