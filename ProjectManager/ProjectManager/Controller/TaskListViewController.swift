@@ -21,6 +21,33 @@
         configureDataSource()
         configureSnapshot()
     }
+    
+    private func createLayout() -> UICollectionViewCompositionalLayout {
+        return UICollectionViewCompositionalLayout {sectionIndex, layoutEnvironment in
+            var listLayout = UICollectionLayoutListConfiguration(appearance: .grouped)
+            listLayout.headerMode = .supplementary
+            
+            let headerSize = NSCollectionLayoutSize(
+                widthDimension: .fractionalWidth(1.0),
+                heightDimension: .estimated(60)
+            )
+            let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+                layoutSize: headerSize,
+                elementKind: TaskListViewController.sectionHeaderElementKind,
+                alignment: .top
+            )
+            let section = NSCollectionLayoutSection.list(
+                using: listLayout,
+                layoutEnvironment: layoutEnvironment
+            )
+            section.interGroupSpacing = 10
+            section.boundarySupplementaryItems = [sectionHeader]
+            
+            return section
+        }
+    }
+    
+        
 extension TaskListViewController {
     private func configureDataSource() {
         let cellRegistration = UICollectionView.CellRegistration<TaskListCell, Todo> { cell, indexPath, itemIdentifier in
