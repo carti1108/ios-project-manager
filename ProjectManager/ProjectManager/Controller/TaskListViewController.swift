@@ -48,6 +48,17 @@
     }
     
         
+    init(taskData: [Todo]? = nil) {
+        self.taskData = taskData
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+
 extension TaskListViewController {
     private func configureDataSource() {
         let cellRegistration = UICollectionView.CellRegistration<TaskListCell, Todo> { cell, indexPath, itemIdentifier in
