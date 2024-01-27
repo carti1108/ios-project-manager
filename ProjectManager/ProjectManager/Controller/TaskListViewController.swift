@@ -10,6 +10,7 @@
         
         return collectionView
     }()
+    private var taskData: [Todo]?
         configureUI()
         configureLayout()
 extension TaskListViewController {
