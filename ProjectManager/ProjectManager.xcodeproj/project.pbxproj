@@ -99,7 +99,6 @@
 			children = (
 				C7431F1025F51E1E0094C4CF /* LaunchScreen.storyboard */,
 				C7431F0E25F51E1E0094C4CF /* Assets.xcassets */,
-				C7431F1325F51E1E0094C4CF /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -132,6 +131,7 @@
 		C7431F0425F51E1D0094C4CF /* ProjectManager */ = {
 			isa = PBXGroup;
 			children = (
+				C7431F1325F51E1E0094C4CF /* Info.plist */,
 				4F8FF8DD2B81FCE600F04547 /* Resources */,
 				4F8FF8DC2B81FCD900F04547 /* Sources */,
 			);
