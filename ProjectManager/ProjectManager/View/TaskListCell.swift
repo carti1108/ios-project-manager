@@ -19,6 +19,7 @@ class TaskListCell: UICollectionViewCell, ReuseIdentifiable {
         let label = UILabel()
         label.font = UIFont.preferredFont(forTextStyle: .body)
         label.textColor = .systemGray
+        label.numberOfLines = 3
         
         return label
     }()
