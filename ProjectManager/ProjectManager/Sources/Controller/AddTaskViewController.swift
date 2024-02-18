@@ -29,6 +29,8 @@ final class AddTaskViewController: UIViewController {
     private let descriptionTextView: UITextView = {
         let textView: UITextView = .init()
         textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.layer.borderWidth = 0.5
+        textView.layer.borderColor = UIColor.lightGray.cgColor
         
         return textView
     }()
