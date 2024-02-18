@@ -45,7 +45,7 @@ class TaskListCell: UICollectionViewCell, ReuseIdentifiable {
         super.init(frame: frame)
         
         configureUI()
-        configureLayout()
+        setUpLayout()
     }
     
     required init?(coder: NSCoder) {
@@ -83,7 +83,7 @@ extension TaskListCell {
         self.contentView.backgroundColor = .white
     }
     
-    private func configureLayout() {
+    private func setUpLayout() {
         NSLayoutConstraint.activate([
             self.stackView.topAnchor.constraint(equalTo: self.contentView.layoutMarginsGuide.topAnchor),
             self.stackView.bottomAnchor.constraint(equalTo: self.contentView.layoutMarginsGuide.bottomAnchor),

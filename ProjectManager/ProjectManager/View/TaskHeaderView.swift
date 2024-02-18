@@ -34,7 +34,7 @@ final class TaskHeaderView: UICollectionReusableView {
         super.init(frame: frame)
         
         configureUI()
-        configureLayout()
+        setUpLayout()
     }
     
     required init?(coder: NSCoder) {
@@ -53,7 +53,7 @@ extension TaskHeaderView {
         self.addSubview(taskCountLabel)
     }
     
-    private func configureLayout() {
+    private func setUpLayout() {
         NSLayoutConstraint.activate([
             self.taskCountLabel.heightAnchor.constraint(equalTo: self.taskCountLabel.widthAnchor),
             self.taskCountLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),

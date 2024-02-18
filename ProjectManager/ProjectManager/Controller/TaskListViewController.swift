@@ -28,9 +28,9 @@ final class TaskListViewController: UIViewController {
         super.viewDidLoad()
         
         configureUI()
-        configureLayout()
-        configureDataSource()
-        configureSnapshot()
+        setUpLayout()
+        setUpDataSource()
+        setUpSnapshot()
     }
     
     private func createLayout() -> UICollectionViewCompositionalLayout {
@@ -72,7 +72,7 @@ final class TaskListViewController: UIViewController {
 }
 
 extension TaskListViewController {
-    private func configureDataSource() {
+    private func setUpDataSource() {
         let cellRegistration = UICollectionView.CellRegistration<TaskListCell, Todo> { cell, indexPath, itemIdentifier in
             guard let taskData = self.taskData else {
                 return
@@ -103,7 +103,7 @@ extension TaskListViewController {
         }
     }
     
-    private func configureSnapshot() {
+    private func setUpSnapshot() {
         guard let taskData = taskData else {
             return
         }
@@ -122,7 +122,7 @@ extension TaskListViewController {
         self.view.addSubview(self.listCollectionView)
     }
     
-    private func configureLayout() {
+    private func setUpLayout() {
         NSLayoutConstraint.activate([
             self.listCollectionView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
             self.listCollectionView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),

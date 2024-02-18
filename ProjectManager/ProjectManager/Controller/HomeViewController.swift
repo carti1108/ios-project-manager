@@ -24,9 +24,9 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureNavigation()
+        setUpNavigation()
         configureUI()
-        configureLayout()
+        setUpLayout()
     }
 }
 
@@ -40,7 +40,7 @@ extension HomeViewController {
         self.view.backgroundColor = .systemBackground
     }
     
-    private func configureLayout() {
+    private func setUpLayout() {
         NSLayoutConstraint.activate([
             self.stackView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
             self.stackView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
@@ -49,7 +49,7 @@ extension HomeViewController {
         ])
     }
     
-    private func configureNavigation() {
+    private func setUpNavigation() {
         self.navigationItem.title = "Project Manager"
     }
 }
