@@ -47,6 +47,8 @@ final class AddTaskViewController: UIViewController {
 
 extension AddTaskViewController {
     private func configureUI() {
+        self.view.backgroundColor = .white
+        
         self.view.addSubview(titleTextField)
         self.view.addSubview(dueDatePicker)
         self.view.addSubview(descriptionTextView)
