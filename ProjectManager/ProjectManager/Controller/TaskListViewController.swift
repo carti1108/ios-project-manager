@@ -52,6 +52,7 @@ final class TaskListViewController: UIViewController {
                 layoutEnvironment: layoutEnvironment
             )
             section.interGroupSpacing = 10
+            section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0)
             section.boundarySupplementaryItems = [sectionHeader]
             
             return section
