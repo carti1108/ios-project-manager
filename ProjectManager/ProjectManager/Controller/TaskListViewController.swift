@@ -82,6 +82,8 @@ extension TaskListViewController {
         }
         
         let headerRegistration = UICollectionView.SupplementaryRegistration<TaskHeaderView>(elementKind: TaskListViewController.sectionHeaderElementKind) { supplementaryView, elementKind, indexPath in
+            supplementaryView.layer.borderWidth = 0.5
+            supplementaryView.layer.borderColor = UIColor.systemGray4.cgColor
             supplementaryView.prepare(text: "TODO", count: 5)
         }
         
