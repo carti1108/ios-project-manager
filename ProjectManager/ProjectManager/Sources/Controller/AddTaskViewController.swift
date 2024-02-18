@@ -32,9 +32,20 @@ final class AddTaskViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        descriptionTextView.delegate = self
+        
 
     }
     
     }
 
+extension AddTaskViewController: UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if textView.text.count > 1000 {
+            return false
+        }
+        
+        return true
+    }
 }
