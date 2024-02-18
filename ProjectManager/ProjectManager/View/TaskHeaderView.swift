@@ -48,7 +48,8 @@ final class TaskHeaderView: UICollectionReusableView {
 }
 
 extension TaskHeaderView {
-    private func configureUI() {        self.addSubview(headerLabel)
+    private func configureUI() {        
+        self.addSubview(headerLabel)
         self.addSubview(taskCountLabel)
     }
     
