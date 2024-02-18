@@ -12,6 +12,9 @@ final class AddTaskViewController: UIViewController {
         let textField: UITextField = .init()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Title"
+        textField.layer.borderWidth = 0.5
+        textField.layer.borderColor = UIColor.lightGray.cgColor
+        textField.font = .preferredFont(forTextStyle: .title3)
         
         return textField
     }()
