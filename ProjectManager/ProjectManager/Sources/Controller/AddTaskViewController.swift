@@ -49,16 +49,18 @@ extension AddTaskViewController {
     
     private func setUpLayout() {
         NSLayoutConstraint.activate([
+            self.titleTextField.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.07),
             self.titleTextField.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 5),
             self.titleTextField.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            self.titleTextField.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 10),
+            self.titleTextField.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
             
-            self.dueDatePicker.topAnchor.constraint(equalTo: self.titleTextField.bottomAnchor, constant: 20),
+            self.dueDatePicker.topAnchor.constraint(equalTo: self.titleTextField.bottomAnchor, constant: 10),
+            self.dueDatePicker.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             
-            self.descriptionTextView.topAnchor.constraint(equalTo: self.dueDatePicker.bottomAnchor, constant: 20),
-            self.descriptionTextView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 20),
+            self.descriptionTextView.topAnchor.constraint(equalTo: self.dueDatePicker.bottomAnchor, constant: 10),
+            self.descriptionTextView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             self.descriptionTextView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            self.descriptionTextView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 10),
+            self.descriptionTextView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
         ])
     }
 }
