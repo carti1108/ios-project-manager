@@ -51,7 +51,7 @@ extension HomeViewController {
     
     private func setUpNavigation() {
         let addButton: UIBarButtonItem = .init(
-            title: "+",
+            image: UIImage(systemName: "plus"),
             style: .plain,
             target: self,
             action: #selector(addButtonDidTap)
