@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TaskListCell: UICollectionViewCell, ReuseIdentifiable {
+final class TaskListCell: UICollectionViewCell, ReuseIdentifiable {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.preferredFont(forTextStyle: .title3)
