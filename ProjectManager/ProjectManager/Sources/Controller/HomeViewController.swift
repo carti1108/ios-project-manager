@@ -50,6 +50,19 @@ extension HomeViewController {
     }
     
     private func setUpNavigation() {
+        let addButton: UIBarButtonItem = .init(
+            title: "+",
+            style: .plain,
+            target: self,
+            action: #selector(addButtonDidTap)
+        )
         self.navigationItem.title = "Project Manager"
+        self.navigationItem.rightBarButtonItem = addButton
+    }
+    
+    @objc private func addButtonDidTap() {
+        let addTaskViewController: AddTaskViewController = .init()
+        addTaskViewController.modalPresentationStyle = .formSheet
+        present(addTaskViewController, animated: true)
     }
 }
