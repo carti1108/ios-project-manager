@@ -80,6 +80,7 @@ extension TaskListCell {
         self.stackView.addArrangedSubview(self.dateLabel)
         
         self.contentView.addSubview(stackView)
+        self.contentView.backgroundColor = .white
     }
     
     private func configureLayout() {
