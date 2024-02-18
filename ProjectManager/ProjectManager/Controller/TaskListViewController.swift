@@ -17,6 +17,7 @@ final class TaskListViewController: UIViewController {
     private lazy var listCollectionView: UICollectionView = {
         let collectionView: UICollectionView = .init(frame: .zero, collectionViewLayout: createLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .systemBackground
         
         return collectionView
     }()
