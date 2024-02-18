@@ -15,7 +15,7 @@ final class HomeViewController: UIViewController {
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
         stackView.spacing = 10
-        stackView.backgroundColor = .systemBackground
+        stackView.backgroundColor = .systemGray4
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         return stackView
