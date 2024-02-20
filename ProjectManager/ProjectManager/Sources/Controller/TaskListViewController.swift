@@ -14,27 +14,8 @@ final class TaskListViewController: UIViewController {
     
     static let sectionHeaderElementKind = "section-header-element-kind"
     
-    private lazy var listCollectionView: UICollectionView = {
-        let collectionView: UICollectionView = .init(frame: .zero, collectionViewLayout: createLayout())
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = .systemBackground
-        
-        return collectionView
-    }()
-    private var dataSource: UICollectionViewDiffableDataSource<Section, Todo>?
-    private var taskData: [Todo]?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        configureUI()
-        setUpLayout()
-        setUpDataSource()
-        setUpSnapshot()
-    }
-    
-    private func createLayout() -> UICollectionViewCompositionalLayout {
-        return UICollectionViewCompositionalLayout {sectionIndex, layoutEnvironment in
+    private let listCollectionView: UICollectionView = {
+        let layout: UICollectionViewCompositionalLayout = UICollectionViewCompositionalLayout {sectionIndex, layoutEnvironment in
             var listLayout = UICollectionLayoutListConfiguration(appearance: .grouped)
             listLayout.headerMode = .supplementary
             
@@ -57,9 +38,25 @@ final class TaskListViewController: UIViewController {
             
             return section
         }
+        
+        let collectionView: UICollectionView = .init(frame: .zero, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .systemBackground
+        
+        return collectionView
+    }()
+    private var dataSource: UICollectionViewDiffableDataSource<Section, Todo>?
+    private var taskData: [Todo]?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        configureUI()
+        setUpLayout()
+        setUpDataSource()
+        setUpSnapshot()
     }
     
-        
     init(taskData: [Todo]? = nil) {
         self.taskData = taskData
         super.init(nibName: nil, bundle: nil)
